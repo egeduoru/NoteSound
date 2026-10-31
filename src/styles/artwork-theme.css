@@ -1,0 +1,199 @@
+/* Neutral on entry; contrast adapts to the actual animated cover background. */
+:root {
+  --cover-color: #ffffff;
+  --cover-accent: #8e5677;
+  --cover-ink: #211a29;
+  --cover-muted: #74677f;
+  --cover-glass: #ffffffb8;
+  --cover-glass-soft: #ffffff70;
+  --cover-edge: #ffffffcc;
+  --cover-selected: #ffffffd9;
+  --cover-control: #ffffffcf;
+  --cover-icon: #855f7a;
+  color: var(--cover-ink);
+  background-color: var(--cover-color);
+  --bg: var(--cover-color);
+  --text: var(--cover-ink);
+  --muted: var(--cover-muted);
+  --accent: var(--cover-accent);
+  --border: var(--cover-edge);
+}
+:root[data-cover-tone="dark"] {
+  --cover-ink: #fcfaff;
+  --cover-muted: #dfdae7;
+  --cover-glass: #171721ab;
+  --cover-glass-soft: #ffffff14;
+  --cover-edge: #ffffff38;
+  --cover-selected: #ffffff29;
+  --cover-control: #ffffff24;
+  --cover-icon: #efe7f3;
+}
+body {
+  background-color: var(--cover-color);
+  transition: background-color 1.6s;
+}
+.liquid-app {
+  color: var(--cover-ink);
+}
+.bunny-wave-page .bunny-wave-hero h1 {
+  color: var(--cover-ink);
+}
+.brand-mark i {
+  background: linear-gradient(
+    180deg,
+    #e4c6dd,
+    var(--cover-accent) 70%,
+    #d7bed7
+  );
+}
+.liquid-app .glass,
+.liquid-app .mini-player {
+  background: var(--cover-glass);
+  border-color: var(--cover-edge);
+}
+.liquid-app .bottom-nav {
+  box-shadow:
+    0 10px 38px #0000001a,
+    inset 0 1px 1px var(--cover-edge);
+}
+.liquid-app .bottom-nav a {
+  color: var(--cover-muted);
+}
+.liquid-app .bottom-nav a.active {
+  color: var(--cover-ink);
+  background: transparent;
+}
+.liquid-app .nav-glass-selection {
+  background: var(--cover-selected);
+  box-shadow:
+    inset 0 1px 2px var(--cover-edge),
+    0 3px 13px #00000012;
+}
+.liquid-app .bottom-nav a.active svg {
+  filter: none;
+}
+.liquid-app .profile-button,
+.liquid-app .topbar-search,
+.liquid-app .icon-button {
+  color: var(--cover-icon);
+}
+.liquid-app .button.primary {
+  background: var(--cover-accent);
+  color: #fff;
+}
+.bunny-wave-page .hero-actions .bunny-play-button,
+.liquid-app .player-play {
+  color: var(--cover-ink);
+  background: var(--cover-control);
+  border-color: var(--cover-edge);
+  box-shadow:
+    0 10px 30px #00000012,
+    inset 0 2px 2px var(--cover-edge);
+}
+.bunny-wave-page .hero-actions .bunny-play-button:hover {
+  background: var(--cover-selected);
+}
+.liquid-app .mini-player {
+  color: var(--cover-muted);
+}
+.liquid-app .mini-info strong,
+.liquid-app .mini-track strong,
+.liquid-app .track-info strong {
+  color: var(--cover-ink);
+}
+.liquid-app .search-field,
+.liquid-app .profile-button,
+.liquid-app .topbar-search {
+  background: var(--cover-glass-soft);
+  border-color: var(--cover-edge);
+}
+.liquid-app .search-field input {
+  color: var(--cover-ink);
+}
+.liquid-app .search-field input::placeholder {
+  color: var(--cover-muted);
+}
+.liquid-app .full-player {
+  color: var(--cover-ink);
+  background: var(--cover-glass);
+}
+.liquid-app .track-info > span,
+.liquid-app .track-info > small,
+.liquid-app .track-duration,
+.liquid-app .mini-info span,
+.liquid-app .mini-artist,
+.liquid-app .mini-time,
+.liquid-app .eyebrow,
+.liquid-app .status-label,
+.liquid-app .library-summary p,
+.liquid-app .topbar-edition {
+  color: var(--cover-muted);
+}
+.liquid-app .tag-list button,
+.liquid-app .button.subtle,
+.liquid-app .tabs button {
+  color: var(--cover-ink);
+  background: var(--cover-glass-soft);
+  border-color: var(--cover-edge);
+}
+.liquid-app .tabs {
+  background: var(--cover-glass-soft);
+  border-color: var(--cover-edge);
+}
+.liquid-app .tabs button.selected,
+.liquid-app .track-row.active {
+  color: var(--cover-ink);
+  background: var(--cover-selected);
+  border-color: var(--cover-edge);
+}
+.liquid-app .track-row:hover,
+.liquid-app .playlist-card {
+  background: var(--cover-glass-soft);
+  border-color: var(--cover-edge);
+}
+.liquid-app .library-heart {
+  background: var(--cover-glass-soft);
+  color: var(--cover-icon);
+  border-color: var(--cover-edge);
+}
+.liquid-app .text-button {
+  color: var(--cover-icon);
+}
+.liquid-app .notice,
+.liquid-app .offline-banner {
+  color: var(--cover-ink);
+  background: var(--cover-glass);
+  border-color: var(--cover-edge);
+}
+.liquid-app input {
+  accent-color: var(--cover-accent);
+}
+.liquid-app button:focus-visible,
+.liquid-app a:focus-visible,
+.liquid-app input:focus-visible {
+  outline-color: var(--cover-icon);
+}
+.liquid-app .progress-range {
+  background: linear-gradient(
+    to right,
+    var(--cover-icon) var(--progress),
+    var(--cover-glass-soft) var(--progress)
+  );
+}
+.liquid-app .progress-range::-webkit-slider-thumb {
+  background: var(--cover-icon);
+}
+.liquid-app .progress-range::-moz-range-thumb {
+  background: var(--cover-icon);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .liquid-app .glass,
+  .liquid-app .mini-player {
+    background: #f6f3f9;
+  }
+  :root[data-cover-tone="dark"] .liquid-app .glass,
+  :root[data-cover-tone="dark"] .liquid-app .mini-player {
+    background: #252330;
+  }
+}

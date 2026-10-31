@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: notesound-hitmoz-test
+    runtime: docker
+    plan: free
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/catalog/status
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: APP_ORIGINS
+        value: https://egeduoru.github.io
+      - key: REQUIRE_TELEGRAM_AUTH
+        value: "false"
+      - key: HITMOZ_METADATA_ENABLED
+        value: "false"
+      - key: HITMOZ_PLAYBACK_ENABLED
+        value: "false"

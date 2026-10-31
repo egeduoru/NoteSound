@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+*.log
+.qa/
+.local/
+.pnpm-store/
+outputs/
+
+server/licenses.json

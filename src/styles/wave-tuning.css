@@ -1,0 +1,162 @@
+.liquid-app .wave-tuning-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  margin-top: 2px;
+  padding: 10px 17px;
+  border: 1px solid var(--cover-edge);
+  border-radius: 24px;
+  background: var(--cover-glass-soft);
+  color: var(--cover-ink);
+  font-size: 12px;
+  font-weight: 550;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  box-shadow:
+    inset 0 1px 1px var(--cover-edge),
+    0 5px 18px #00000008;
+}
+.liquid-app .wave-tuning-trigger:hover {
+  background: var(--cover-selected);
+}
+.liquid-app .bunny-wave-hero .hero-actions {
+  position: relative;
+  z-index: auto;
+}
+.liquid-app .bunny-wave-hero .wave-tuning-trigger {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+}
+.liquid-app .bunny-wave-hero .wave-tuning-trigger:active {
+  transform: translateY(-50%) scale(0.94);
+}
+.liquid-app .bunny-wave-hero .wave-tuning-trigger > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.liquid-app .wave-tuning-panel {
+  color: var(--cover-ink);
+  text-align: left;
+}
+.liquid-app .wave-tuning-panel p {
+  margin: 0;
+  color: var(--cover-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.liquid-app .wave-tuning-panel fieldset {
+  min-width: 0;
+  margin: 24px 0 0;
+  padding: 0;
+  border: 0;
+}
+.liquid-app .wave-tuning-panel legend {
+  margin-bottom: 11px;
+  padding: 0;
+  color: var(--cover-ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.liquid-app .wave-tuning-modes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+.liquid-app .wave-tuning-mode {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+  min-height: 91px;
+  padding: 13px 10px 24px;
+  border: 1px solid var(--cover-edge);
+  border-radius: 18px;
+  background: var(--cover-glass-soft);
+  color: var(--cover-ink);
+  text-align: left;
+}
+.liquid-app .wave-tuning-mode strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+.liquid-app .wave-tuning-mode span {
+  color: var(--cover-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+.liquid-app .wave-tuning-mode > svg {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+}
+.liquid-app .wave-tuning-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.liquid-app .wave-tuning-options button {
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1px solid var(--cover-edge);
+  border-radius: 23px;
+  background: var(--cover-glass-soft);
+  color: var(--cover-ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+.liquid-app .wave-tuning-panel button[aria-pressed="true"] {
+  border-color: var(--cover-icon);
+  background: var(--cover-selected);
+  box-shadow: inset 0 0 0 1px var(--cover-icon);
+}
+.liquid-app .wave-tuning-panel .wave-tuning-note {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--cover-edge);
+  font-size: 11px;
+}
+.liquid-app .wave-tuning-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+.liquid-app .wave-tuning-reset {
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--cover-muted);
+  font-size: 12px;
+}
+.liquid-app .wave-tuning-footer .button {
+  min-height: 44px;
+  padding: 10px 25px;
+}
+@media (max-width: 360px) {
+  .liquid-app .wave-tuning-mode {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .liquid-app .wave-tuning-mode strong {
+    font-size: 11px;
+  }
+  .liquid-app .wave-tuning-options button {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}

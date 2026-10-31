@@ -1,0 +1,313 @@
+/* The base is the unmodified dominant cover RGB. Every cloud uses the same
+   animated currentColor, so native CSS interpolation blends the whole scene. */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  color: #ffffff;
+  background-color: currentColor;
+  transition: color 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  contain: strict;
+}
+.atmosphere-cloud {
+  position: absolute;
+  display: block;
+  border-radius: 43%;
+  filter: blur(16px);
+  will-change: transform, opacity;
+}
+.atmosphere-cloud--lilac {
+  width: 135%;
+  height: 90%;
+  left: -20%;
+  top: -15%;
+  background:
+    radial-gradient(
+      ellipse 30% 20% at 27% 33%,
+      color-mix(in srgb, currentColor 86%, white) 3%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 25% 27% at 66% 36%,
+      color-mix(in srgb, currentColor 84%, black) 4%,
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 40% 22% at 42% 71%,
+      color-mix(in srgb, currentColor 88%, black) 5%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 24% 17% at 82% 72%,
+      color-mix(in srgb, currentColor 92%, white) 8%,
+      transparent 73%
+    );
+  animation: cloud-lilac 10s ease-in-out -2s infinite;
+}
+.atmosphere-cloud--rose {
+  width: 140%;
+  height: 95%;
+  right: -25%;
+  bottom: -13%;
+  background:
+    radial-gradient(
+      ellipse 35% 23% at 39% 28%,
+      color-mix(in srgb, currentColor 84%, white) 5%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 28% 19% at 73% 44%,
+      color-mix(in srgb, currentColor 86%, black) 5%,
+      transparent 77%
+    ),
+    radial-gradient(
+      ellipse 38% 23% at 28% 70%,
+      color-mix(in srgb, currentColor 89%, black) 8%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 23% 26% at 77% 77%,
+      color-mix(in srgb, currentColor 90%, white) 8%,
+      transparent 77%
+    );
+  animation: cloud-rose 13s ease-in-out -7s infinite;
+}
+.atmosphere-cloud--pearl {
+  width: 136%;
+  height: 120%;
+  left: -18%;
+  top: -10%;
+  filter: blur(9px);
+  /* Silver troughs keep the white opening scene visibly flowing too.
+     They inherit the animated cover color instead of switching palettes. */
+  background:
+    radial-gradient(
+      ellipse 30% 12% at 14% 50%,
+      color-mix(in srgb, currentColor 82%, white) 5%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 22% 17% at 40% 36%,
+      color-mix(in srgb, currentColor 87%, black) 5%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 31% 11% at 68% 49%,
+      color-mix(in srgb, currentColor 85%, white) 4%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 33% 14% at 94% 29%,
+      color-mix(in srgb, currentColor 90%, black) 4%,
+      transparent 77%
+    ),
+    radial-gradient(
+      ellipse 38% 14% at 49% 86%,
+      color-mix(in srgb, currentColor 86%, white) 4%,
+      transparent 77%
+    ),
+    radial-gradient(
+      ellipse 41% 20% at 9% 62%,
+      transparent 30%,
+      color-mix(in srgb, currentColor 85%, white) 48%,
+      transparent 77%
+    ),
+    radial-gradient(
+      ellipse 37% 18% at 91% 68%,
+      transparent 33%,
+      color-mix(in srgb, currentColor 89%, white) 49%,
+      transparent 78%
+    );
+  animation: cloud-pearl 11s ease-in-out -4s infinite;
+}
+.atmosphere-silk {
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    118deg,
+    transparent 24%,
+    transparent 37%,
+    color-mix(in srgb, currentColor 83%, white) 46%,
+    color-mix(in srgb, currentColor 88%, black) 51%,
+    transparent 61%,
+    transparent 73%
+  );
+  animation: cloud-silk 8s ease-in-out -2s infinite alternate;
+  will-change: transform, opacity;
+}
+.atmosphere-lights,
+.atmosphere-finish {
+  position: absolute;
+  inset: 0;
+}
+.atmosphere-light {
+  position: absolute;
+  left: var(--light-x);
+  top: var(--light-y);
+  width: var(--light-size, 2.5px);
+  height: var(--light-size, 2.5px);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 0 5px 1px #ffffffa6,
+    0 0 9px #00000038;
+  opacity: 0.4;
+  animation:
+    cloud-light-drift calc(var(--light-duration) * 2.5) ease-in-out
+      var(--light-delay) infinite alternate,
+    cloud-light-shine var(--light-duration) ease-in-out var(--light-delay)
+      infinite;
+}
+.atmosphere-light--star {
+  width: 9px;
+  height: 9px;
+  background: transparent;
+  box-shadow: none;
+}
+.atmosphere-light--star::before,
+.atmosphere-light--star::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(
+    transparent,
+    #ffffff 42%,
+    #ffffff 58%,
+    transparent
+  );
+  box-shadow:
+    0 0 6px #ffffffb3,
+    0 0 3px #00000024;
+}
+.atmosphere-light--star::before {
+  width: 1.4px;
+  height: 11px;
+}
+.atmosphere-light--star::after {
+  width: 11px;
+  height: 1.4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffffff 42%,
+    #ffffff 58%,
+    transparent
+  );
+}
+.atmosphere-finish {
+  background: linear-gradient(
+    180deg,
+    #ffffff05,
+    transparent 23%,
+    transparent 77%,
+    #00000005
+  );
+}
+@keyframes cloud-lilac {
+  0%,
+  100% {
+    transform: translate3d(-12%, -7%, 0) rotate(-12deg) scale(0.98);
+    opacity: 0.92;
+  }
+  50% {
+    transform: translate3d(17%, 14%, 0) rotate(12deg) scale(1.1);
+    opacity: 1;
+  }
+}
+@keyframes cloud-rose {
+  0%,
+  100% {
+    transform: translate3d(14%, 9%, 0) rotate(10deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(-17%, -13%, 0) rotate(-12deg) scale(1.12);
+    opacity: 0.83;
+  }
+}
+@keyframes cloud-pearl {
+  0%,
+  100% {
+    transform: translate3d(-13%, 11%, 0) rotate(-12deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(13%, -13%, 0) rotate(11deg) scale(1.08);
+    opacity: 0.98;
+  }
+}
+@keyframes cloud-silk {
+  from {
+    transform: translate3d(-15%, 8%, 0) rotate(-12deg);
+    opacity: 0.24;
+  }
+  to {
+    transform: translate3d(16%, -8%, 0) rotate(8deg);
+    opacity: 0.58;
+  }
+}
+@keyframes cloud-light-drift {
+  from {
+    transform: translate3d(-12px, 17px, 0);
+  }
+  to {
+    transform: translate3d(18px, -25px, 0);
+  }
+}
+@keyframes cloud-light-shine {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  25% {
+    opacity: 0.48;
+  }
+  39% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.54;
+  }
+  66% {
+    opacity: 0.23;
+  }
+}
+
+.atmosphere.is-paused *,
+.atmosphere.is-paused *::before,
+.atmosphere.is-paused *::after {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 650px) {
+  .atmosphere-cloud {
+    filter: blur(12px);
+  }
+  .atmosphere-cloud--pearl {
+    filter: blur(7px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere *,
+  .atmosphere *::before,
+  .atmosphere *::after {
+    animation: none !important;
+    will-change: auto;
+  }
+  .atmosphere-light {
+    opacity: 0.28;
+  }
+}
+.reduced-motion .atmosphere *,
+.reduced-motion .atmosphere *::before,
+.reduced-motion .atmosphere *::after {
+  animation: none !important;
+  will-change: auto;
+}
+.reduced-motion .atmosphere-light {
+  opacity: 0.28;
+}

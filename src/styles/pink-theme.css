@@ -1,0 +1,79 @@
+/* Warm rose glass picks up the actual illustration, rather than lilac. */
+:root {
+  color: #482b38;
+  background: #f9dce5;
+  --bg: #f9dce5;
+  --text: #482b38;
+  --muted: #755464;
+  --accent: #b94d77;
+  --glass-shadow:
+    0 12px 42px #9d446e13, inset 0 1px 1px #fffffffa, inset 0 -1px 1px #bd789610;
+}
+
+.bunny-wave-page .bunny-wave-hero h1 {
+  color: #4b2939;
+}
+.brand-mark i {
+  background: linear-gradient(180deg, #edabc3, #b84f7a 70%, #e995b6);
+}
+.liquid-app .bottom-nav a {
+  color: #936c80;
+}
+.liquid-app .bottom-nav a.active {
+  color: #ac3f6c;
+  background: transparent;
+}
+.liquid-app .nav-glass-selection {
+  background: linear-gradient(140deg, #ffffffc4, #ffeaf2b3);
+}
+.liquid-app .bottom-nav a.active svg {
+  filter: drop-shadow(0 2px 3px #ca729940);
+}
+.liquid-app .bottom-nav {
+  box-shadow:
+    0 10px 38px #96536e21,
+    inset 0 1px 1px #fff,
+    inset 0 -1px 2px #c790aa20;
+}
+.liquid-app .profile-button,
+.liquid-app .topbar-search,
+.liquid-app .icon-button {
+  color: #a16a83;
+}
+.liquid-app .button.primary {
+  background: linear-gradient(145deg, #d8759e, #b34975);
+  box-shadow:
+    0 8px 24px #ab47772b,
+    inset 0 1px 1px #ffffff70;
+}
+.bunny-wave-page .hero-actions .bunny-play-button,
+.liquid-app .player-play {
+  color: #b14f7b;
+  background: linear-gradient(145deg, #ffffffe6, #f6cedea6);
+  border-color: #ffffffeb;
+  box-shadow:
+    0 10px 30px #bd7c9824,
+    inset 0 2px 2px #fff,
+    inset 0 -1px 2px #b983991a;
+}
+.bunny-wave-page .hero-actions .bunny-play-button:hover {
+  background: linear-gradient(145deg, #ffffffef, #f4bfd6c9);
+}
+.liquid-app .mini-player {
+  background: linear-gradient(130deg, #ffffffad, #ffe7f078);
+  border-color: #ffffffd1;
+}
+.liquid-app .search-field {
+  background: linear-gradient(145deg, #ffffffbd, #fff0f78c);
+}
+.liquid-app .full-player {
+  background: linear-gradient(145deg, #fff1f5db, #f6d8e4da 55%, #fae7e1e0);
+}
+.liquid-app input {
+  accent-color: #c36c92;
+}
+.liquid-app button:focus-visible,
+.liquid-app a:focus-visible,
+.liquid-app input:focus-visible {
+  outline-color: #bc5984;
+}

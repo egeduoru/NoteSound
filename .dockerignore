@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+.env.*
+server/.env
+server/licenses.json
+outputs
+.qa
+dist

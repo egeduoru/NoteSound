@@ -1,0 +1,12 @@
+NoteSound Original Sessions
+
+Eight original instrumental test compositions, each 48 seconds, generated specifically for this project.
+No external audio recordings, samples, commercial songs, or preexisting melodies are used.
+They are algorithmically composed and synthesized; the displayed NoteSound artist names identify this test collection.
+
+To the extent possible under law, all copyright and related or neighboring rights in these generated audio files and the generated artwork have been waived under CC0 1.0 Universal.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+See scripts/generate-originals.py for reproducible composition and rendering.
+These files may be streamed, downloaded, and stored offline by this application.
+This permission does not apply to any external catalog or user-imported recording.
