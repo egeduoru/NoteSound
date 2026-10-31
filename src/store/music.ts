@@ -1934,7 +1934,7 @@ async function advance(manual: boolean) {
     if (revision !== playRevision) return;
     s = useMusicStore.getState();
   }
-  let queue = [...s.queue];
+  const queue = [...s.queue];
   const next = queue.shift();
   if (!next) {
     if (s.repeat === "all" && !s.wave) {
